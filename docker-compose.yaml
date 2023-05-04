@@ -8,7 +8,7 @@ services:
     restart: always
     volumes:
       - ./server1.hcl:/consul/config/server1.hcl
-      - ./consul-acl.hcl:/consul/config/consul-acl.hcl
+      - ./server-common.hcl:/consul/config/server-common.hcl
       - ./certs/:/consul/config/certs/
     networks:
       - consul
@@ -24,7 +24,7 @@ services:
     restart: always
     volumes:
       - ./server2.hcl:/consul/config/server2.hcl
-      - ./consul-acl.hcl:/consul/config/consul-acl.hcl
+      - ./server-common.hcl:/consul/config/server-common.hcl
       - ./certs/:/consul/config/certs/
     networks:
       - consul
@@ -36,7 +36,7 @@ services:
     restart: always
     volumes:
       - ./server3.hcl:/consul/config/server3.hcl
-      - ./consul-acl.hcl:/consul/config/consul-acl.hcl
+      - ./server-common.hcl:/consul/config/server-common.hcl
       - ./certs/:/consul/config/certs/
     networks:
       - consul
@@ -48,7 +48,6 @@ services:
     restart: always
     volumes:
       - ./client.hcl:/consul/config/client.hcl
-      - ./consul-acl.hcl:/consul/config/consul-acl.hcl
       - ./certs/:/consul/config/certs/
     networks:
       - consul
