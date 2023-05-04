@@ -1,22 +1,25 @@
 node_name = "consul-server1"
-server    = true
-
-ui_config {
-  enabled = true
-}
-
-data_dir = "/consul/data"
-
-addresses {
-  http = "0.0.0.0"
-}
 
 retry_join = [
   "consul-server2",
   "consul-server3"
 ]
 
+server    = true
+data_dir = "/consul/data"
 encrypt = "aPuGh+5UDskRAbkLaXRzFoSOcSM+5vAK+NEYOWHJH7w="
+
+connect {
+  enabled = true
+}
+
+ui_config {
+  enabled = true
+}
+
+addresses {
+  http = "0.0.0.0"
+}
 
 tls = {
   defaults = {
